@@ -5,6 +5,10 @@ body {
 	background-repeat: no-repeat;
 }
 
+nav {
+	border: 2px solid white;
+}
+
 .title, .pre-title {
 	color: white;
 	text-align: center;
