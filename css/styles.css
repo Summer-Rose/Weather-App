@@ -1,0 +1,41 @@
+body {
+	background-image: url('../img/portland.jpg');
+	background-size: cover;
+	background-position: 40% 20%;
+	background-repeat: no-repeat;
+}
+
+.title, .pre-title {
+	color: white;
+	text-align: center;
+}
+
+.pre-title {
+	margin-top: 4.5em;
+	font-family: 'Kaushan Script', sans-serif;
+	font-size: 2em;
+}
+
+.title {
+	margin-top: .5em;
+	font-family: 'Fredericka the Great', sans-serif;
+	font-size: 4em;
+}
+
+.temperature {
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	width: 100px;
+	height: 100px;
+	/*border: 3px solid white;
+	border-radius: 10px;*/
+}
+
+.temperature h1 {
+	text-align: center;
+	margin: 25px;
+	color: white;
+	opacity: 0.5;
+	font-size: 3em;
+}
