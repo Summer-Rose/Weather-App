@@ -1,22 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-  	<script type="http://api.openweathermap.org/data/2.5/weather?q=Portland" type="text/javascript"></script>
+  	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  	<title>Local Weather</title>
+  	
   	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script|Fredericka+the+Great' rel='stylesheet' type='text/css'>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.11.3.js"></script>
-    <script src="js/scripts.js"></script>
-    <title>Portland Weather</title>
+    <script src="js/scripts.js"></script> 
   </head>
   <body>
+  	<nav id="mainNav" class="navbar navbar-transparent navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             	<form class="navbar-form navbar-left" role="search" id="search">
+        			<div class="form-group">
+          				<input type="text" id="citySearch" name="citySearch" class="form-control" placeholder="Search City">
+        			</div>
+        			<button type="submit" class="btn btn-default">Submit</button>
+      			</form>
+      			<ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="navbar-brand" id="logo">Local Weather</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
   	<h4 class="pre-title">Your local weather for</h4>
-  	<h1 class="title" id="city">Portland, Oregon</h1>
+  	<h1 class="title" id="city">City</h1>
 
   	<div class="temperature">
-  		<h1><a id="temperature" href="#" onclick="switchUnits(); return false;" title="Click to switch between metric and imperial units"></a><span id="weather"></span>76&deg;</h1>
+  		<h1><span id="temperature">76</span>&deg;</h1>
   	</div>
-  	<script>
-</script>
-  </body>
+
+   </body>
 </html>
