@@ -1,16 +1,19 @@
 $(document).ready(function(){
     navigator.geolocation.getCurrentPosition(handleLocation);
 
-    function handeleLocation(position){
-        var weather = getWeather(position.coords.latitude, position.coords.longitude);
-          $("#temperature").text(weather);
+    function handleLocation(position){
+        getWeather(position.coords.latitude, position.coords.longitude);
     }
 
     function getWeather(lat, lon) {
-        var temp = 0;
-        $.getJSON("api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=imperial", function(data) {
-            temp = Math.round(data.main.temp);  
+        $.getJSON("api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=imperial", function( data ) {
+            getTemperature(data);
         });
-        return temp;
+    }
+
+    function getTemperature(data) {
+        var temp = Math.round(data.main.temp);
+        $("#temperature").text(weather); 
     }
 });
+
