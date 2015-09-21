@@ -1,15 +1,16 @@
-
-
-
-
 $(document).ready(function(){
-$.getJSON("http://api.openweathermap.org/data/2.5/forecast/daily?q=Montpellier&mode=json&units=metric&cnt=10",function(result){
-    console.log(result);
-    var city = result.city.name;
-    var temperature = result.list[1].temp.max;
+    navigator.geolocation.getCurrentPosition(handleLocation);
 
+    function handeleLocation(position){
+        var weather = getWeather(position.coords.latitude, position.coords.longitude);
+          $("#temperature").text(weather);
+    }
 
-    $("#temperature").text(temperature);
-    $("#city").text(city);
-    });
+    function getWeather(lat, lon) {
+        var temp = 0;
+        $.getJSON("api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=imperial", function(data) {
+            temp = Math.round(data.main.temp);  
+        });
+        return temp;
+    }
 });
